@@ -1,0 +1,59 @@
+body{
+    color: green;
+    background-color: rgb(255, 255, 255);
+    background-image: url(images/MWSLogo.gif);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding: 100px 0 0 0;
+}
+H1, H2, H3, H4, H5, H6{
+    font-family: "Arial, Helvetica, sans-serif";}
+hr{
+    border: 2px solid rgb(155, 155, 155);
+    height: 1px;
+    background-color: rgb(155, 155, 155);}
+ADDRESS{
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: left;
+    text-transform:capitalize;
+}
+BLOCKQUOTE{
+    background-color: rgb(202, 200, 200);
+}
+UL{
+    list-style: circle url(images/Apple.jpg) outside;
+}
+UL B{
+    color: rgb(155,0,0);
+}
+
+A{
+    font-size:0.9em;
+    color: rgb(0, 11, 128);
+    padding: 0.7em;
+}
+A:hover{
+    color: rgb(203, 17, 17);
+    text-transform: Uppercase;
+}
+.Special {
+color: rgb(153,102,6);
+font-weight:bold
+}
+DIV.Article {
+padding: 0.5em;
+border-style: solid;
+border-width: 2px;
+background-color: rgb(252,221,163);
+width: 250px;
+height: auto; 
+float:right
+}
+DIV.Article img {
+    float: right;
+    margin: 0 0.75em 0.5em 0;
+    max-width: 80px;
+    height: auto;
+}
+
