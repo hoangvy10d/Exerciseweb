@@ -1,0 +1,161 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <style>
+        body {
+            background-color: #99f0ff;
+            background-image: url('Delong.jpg');
+            background-repeat: no-repeat;
+            background-position: center top;
+            padding: 100px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input {
+            font-size: 1em;
+            padding: 5px;
+            border: 1px solid #805c21;
+        }
+        textarea {
+            font-size: 1em;
+            border: 1px solid #805c21;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            padding: 0px 10px 10px 10px;
+            width: auto;
+        }
+        td {
+            padding-right: 1px;
+            white-space: nowrap;
+        }
+        form {
+            margin: 0;
+            width: 300px;
+        }
+        select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .smalltable {
+            border: 1px solid #216080;
+            width: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Travel Expense Report</h1>
+    <hr style="border: 1px solid #805c21; margin: 0 0 5px;">
+    <form name="travelReportForm">
+    <table>
+        <tr>
+            <td> 1) First Name: </td>
+            <td><input type="text" name="firstName"></td>
+            <td> Last Name: </td>
+            <td><input type="text" name="lastName"></td>
+        </tr>
+        <tr>
+            <td> 2) Social Security Number: </td>
+            <td><input type="text" name="socialSecurityNumber"></td>
+        </tr>
+        <tr>
+            <td> 3) Department: </td>
+            <td>
+                <select name="department" id="department" size="1" onchange="this.form.departmentOutput.value=this.value;">
+                    <option value="Accounting">Accounting</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> 4) Describe the purpose of the trip: </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <textarea name="tripPurpose" rows="4" cols="50"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> 5) Itemize your travel expenses: </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <table class="smalltable" >
+                    <tr>
+                        <th> Date</th>
+                        <th> Description</th>
+                        <th> Category</th>
+                        <th> Amount</th>
+                    </tr>
+                <tr>
+                    <td><input type="date" name="date"></td>
+                    <td><input type="text" name="description"></td>
+                    <td>
+                        <select name="category" id="category" size="1" onchange="this.form.categoryOutput.value=this.value;">
+                            <option value="Meal">Meal</option>
+                            <option value="Destination">Destination</option>
+                            <option value="Lodging">Lodging</option>
+                            <option value="Checking">Checking</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="date" name="date"></td>
+                    <td><input type="text" name="description"></td>
+                    <td>
+                        <select name="category" id="category" size="1" onchange="this.form.categoryOutput.value=this.value;">
+                            <option value="Meal">Meal</option>
+                            <option value="Destination">Destination</option>
+                            <option value="Lodging">Lodging</option>
+                            <option value="Checking">Checking</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="date" name="date"></td>
+                    <td><input type="text" name="description"></td>
+                    <td>
+                        <select name="category" id="category" size="1" onchange="this.form.categoryOutput.value=this.value;">
+                            <option value="Meal">Meal</option>
+                            <option value="Destination">Destination</option>
+                            <option value="Lodging">Lodging</option>
+                            <option value="Checking">Checking</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="date" name="date"></td>
+                    <td><input type="text" name="description"></td>
+                    <td>
+                        <select name="category" id="category" size="1" onchange="this.form.categoryOutput.value=this.value;">
+                            <option value="Meal">Meal</option>
+                            <option value="Destination">Destination</option>
+                            <option value="Lodging">Lodging</option>
+                            <option value="Checking">Checking</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="amount"></td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td> 6)Have you submitted all required documentation? 
+                <label><input type="radio" name="submit" value="yes"> Yes</label>
+                <label><input type="radio" name="submit" value="no"> No</label>
+            </td>
+        </tr>
+    </table>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset" onclick="resetForm()">
+    </form>
+    <h3> Questions? Contact us at support@company.com</h3>
+
+</body>
+</html>
