@@ -1,0 +1,43 @@
+
+<html >
+<head>
+    <title>Page Title</title>
+    <script src="main.js"></script>
+    <script type ="text/javascript">
+        function XuLy(a, b, phepToan) {
+           var x = parseFloat(a);
+           var y = parseFloat(b);
+           var kq = ThucHienPhepToan(x, y, phepToan);
+           document.getElementById("input_result").innerText = kq;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="2">Phương trình bậc 1</td>
+            </tr>
+            <tr>
+                <td>Hệ số a: </td>
+                <td><input type="text" id="input_a"></td>
+            </tr>
+            <tr>
+                <td>Hệ số b: </td>
+                <td><input type="text" id="input_b"></td>
+            </tr>
+            <tr>
+                <td>Kết quả: </td>
+                <td id="input_result" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="cộng" onclick="XuLy(input_a.value, input_b.value, '+')">
+                    <input type="button" value="trừ" onclick="XuLy(input_a.value, input_b.value, '-')">
+                    <input type="button" value="nhân" onclick="XuLy(input_a.value, input_b.value, '*')">
+                    <input type="button" value="chia" onclick="XuLy(input_a.value, input_b.value, '/')">
+                </td>
+        </table>
+    </form>
+</body>
+</html>
