@@ -1,0 +1,95 @@
+<html >
+<head>
+    <title>Page Title</title>
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+        th, td {
+            padding: 8px 12px;
+        }
+    </style>
+    <script type ="text/javascript"> </script>
+    <script>
+        function calculateTotal(partNumber) {
+            var price, qty, itemTotal;
+            switch(partNumber) {
+                case 'C112':
+                    price = 19.95;
+                    qty = parseInt(document.getElementById("qty_C112").value) || 0;
+                    break;
+                case 'B124':
+                    price = 29.95;
+                    qty = parseInt(document.getElementById("qty_B124").value) || 0;
+                    break;
+                case 'U125':
+                    price = 199.95;
+                    qty = parseInt(document.getElementById("qty_U125").value) || 0;
+                    break;
+                default:
+                    return;
+            }
+            itemTotal = price * qty;
+            document.getElementById("result_" + partNumber).value = itemTotal.toFixed(2);
+            calculateGrandTotal();
+        }
+
+        function calculateGrandTotal() {
+            var total = 0;
+            total += parseFloat(document.getElementById("result_C112").value) || 0; // C112
+            total += parseFloat(document.getElementById("result_B124").value) || 0; // B124
+            total += parseFloat(document.getElementById("result_U125").value) || 0; // U125
+            document.getElementById("total").value = total.toFixed(2);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            calculateTotal('C112');
+            calculateTotal('B124');
+            calculateTotal('U125');
+        });
+    </script>
+
+</head>
+<body>
+    <table id="myTable" style="text-align: center;">
+        <thead >
+            <tr>
+                <th>Part Number</th>
+                <th>Description</th>
+                <th>Price ($)</th>
+                <th>Qty</th>
+                <th>Item Total ($)</th>
+            </tr>
+            <tr>
+                <td>C112 </td>
+                <td>Mouse</td>
+                <td type="number">19.95 </td>
+                <td><input type="number" id="qty_C112" value="1" min="0" oninput="calculateTotal('C112')"></td>
+                <td> <input type="text" id="result_C112" readonly> </td>
+            </tr>
+            <tr>
+                <td>B124 </td>
+                <td>Keyboard</td>
+                <td type="number">29.95 </td>
+                <td><input type="number" id="qty_B124" value="1" min="0" oninput="calculateTotal('B124')"></td>
+                <td> <input type="text" id="result_B124" readonly> </td>
+            </tr>
+            <tr>
+                <td>U125 </td>
+                <td>Monitor</td>
+                <td type="number">199.95 </td>
+                <td><input type="number" id="qty_U125" value="1" min="0" oninput="calculateTotal('U125')"></td>
+                <td> <input type="text" id="result_U125" readonly> </td>
+            </tr>
+            
+        </thead>
+        <tbody >
+            <tr>
+                <td colspan="4" rowspan="5" style="text-align: right;">Total:</td>
+                <td><input type="text" id="total" readonly></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

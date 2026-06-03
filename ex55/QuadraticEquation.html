@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Page Title</title>
+    <script type="text/javascript">
+        function Xacdinh(pt) {
+            var a = parseFloat(document.getElementById("inputA").value);
+            var b = parseFloat(document.getElementById("inputB").value);
+            var c = parseFloat(document.getElementById("inputC").value);
+            var result;
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                result = "Please enter valid numbers for a, b, and c.";
+            } else {
+                switch (pt) {
+                    case 'solve':
+                        var delta = b * b - 4 * a * c;
+                        if (delta > 0) {
+                            var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                            var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                            result = "Two distinct solutions:<br>x1 = " + x1 + "<br>x2 = " + x2;
+                        } else if (delta === 0) {
+                            var x = -b / (2 * a);
+                            result = "x = " + x;
+                        } else {
+                            result = "No solution.";
+                        }
+                        break;
+                    default:
+                        result = "Invalid operation.";
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function clearResult() {
+            document.getElementById("inputA").value = "";
+            document.getElementById("inputB").value = "";
+            document.getElementById("inputC").value = "";
+            document.getElementById("result").innerText = "";
+        }
+    </script>
+
+</head>
+<body>
+    <table id="mytable" border="1">
+        <thead>
+            <tr>
+                <td>a</td>
+                <td><input type="text" id="inputA"></td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td><input type="text" id="inputB"></td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td><input type="text" id="inputC"></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td id="result"></td>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td colspan="2">
+                    <button onclick="Xacdinh('solve')">Solution</button>
+                    <button onclick="clearResult()">Clear</button>
+                </td>
+            </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html lang='en'>
+<head>
+   <title>Page Title</title>
+    <script type="text/javascript">
+        function Xacdinh(operation) {
+            var a = parseFloat(document.getElementById("inputA").value);
+            var b = parseFloat(document.getElementById("inputB").value);
+            var c = parseFloat(document.getElementById("inputC").value);
+            var result;
+
+            switch(operation) {
+                case 'max':
+                    result = Math.max(a, b, c);
+                    break;
+                case 'min':
+                    result = Math.min(a, b, c);
+                    break;
+                case 'cos':
+                    result = Math.cos(a);
+                    break;
+                case 'pow':
+                    result = Math.pow(a, b);
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Math Functions</h1>
+    <table id="myMathTable" border="1">
+        <thead>
+            <tr>
+                <td>a</td>
+                <td><input type="text" id="inputA"></td>
+            </tr>
+            <tr>
+                <td>b</td>
+                <td><input type="text" id="inputB"></td>
+            </tr>
+            <tr>
+                <td>c</td>
+                <td><input type="text" id="inputC"></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td id="result"></td>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td colspan="2">
+                    <button onclick="Xacdinh('max')">Max</button>
+                    <button onclick="Xacdinh('min')">Min</button>
+                    <button onclick="Xacdinh('cos')">Cos(a)</button>
+                    <button onclick="Xacdinh('pow')">a<sup>b</sup></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        // You can add any additional JavaScript code here if needed
+    </script>
+</body>
+</html>
